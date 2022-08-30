@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby'
 import { Link } from 'gatsby'
 
-import Text from '@/components/Text'
+import Text from '@/components/Common/Text'
 
 type InfoPageProps = {
   data: {
