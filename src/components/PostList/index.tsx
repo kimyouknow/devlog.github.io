@@ -2,7 +2,7 @@ import styled from '@emotion/styled'
 import { IGatsbyImageData } from 'gatsby-plugin-image'
 import { useMemo } from 'react'
 
-import PostItem from '@/components/Main/PostItem'
+import PostItem from '@/components/PostList/PostItem'
 import { PostListItemType } from '@/types/PostItem.types'
 
 export interface PostType {

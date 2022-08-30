@@ -4,7 +4,7 @@ import queryString, { ParsedQuery } from 'query-string'
 import { useMemo } from 'react'
 
 import CategoryList, { CategoryListProps } from '@/components/CategoryList'
-import PostList, { PostType } from '@/components/Main/PostList'
+import PostList, { PostType } from '@/components/PostList'
 import Layout from '@/Layout'
 import { PostListItemType } from '@/types/PostItem.types'
 
@@ -22,12 +22,6 @@ type IndexPageProps = {
       }
     }
   }
-}
-
-const CATEGORY_LIST = {
-  All: 5,
-  Web: 3,
-  Mobile: 2,
 }
 
 const IndexPage = ({
