@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby'
 import React from 'react'
 
+import PostContent from '@/components/PostDetail/PostContent'
 import PostHeader from '@/components/PostDetail/PostHeader'
 import Layout from '@/Layout'
 import { PostFrontmatterType } from '@/types/PostItem.types'
@@ -30,7 +31,7 @@ const PostTemplate = ({
       html,
       frontmatter: {
         title,
-        summary, // 나중에 사용할 예정입니다!
+        summary,
         date,
         categories,
         thumbnail: {
@@ -43,6 +44,7 @@ const PostTemplate = ({
   return (
     <Layout>
       <PostHeader title={title} date={date} categories={categories} thumbnail={gatsbyImageData} />
+      <PostContent html={html} />
     </Layout>
   )
 }
