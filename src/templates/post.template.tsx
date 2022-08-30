@@ -1,13 +1,50 @@
 import { graphql } from 'gatsby'
 import React from 'react'
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface PostTemplateProps {}
+import PostHeader from '@/components/PostDetail/PostHeader'
+import Layout from '@/Layout'
+import { PostFrontmatterType } from '@/types/PostItem.types'
 
-const PostTemplate = (props: PostTemplateProps) => {
-  console.log(props)
+export interface PostPageItemType {
+  node: {
+    html: string
+    frontmatter: PostFrontmatterType
+  }
+}
 
-  return <div>Post Template</div>
+interface PostTemplateProps {
+  data: {
+    allMarkdownRemark: {
+      edges: PostPageItemType[] // 존재하지 않는 타입이므로 에러가 발생하지만 일단 작성해주세요
+    }
+  }
+}
+
+const PostTemplate = ({
+  data: {
+    allMarkdownRemark: { edges },
+  },
+}: PostTemplateProps) => {
+  const {
+    node: {
+      html,
+      frontmatter: {
+        title,
+        summary, // 나중에 사용할 예정입니다!
+        date,
+        categories,
+        thumbnail: {
+          childImageSharp: { gatsbyImageData },
+        },
+      },
+    },
+  } = edges[0]
+
+  return (
+    <Layout>
+      <PostHeader title={title} date={date} categories={categories} thumbnail={gatsbyImageData} />
+    </Layout>
+  )
 }
 
 export default PostTemplate
