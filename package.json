@@ -26,6 +26,9 @@
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
+    "@fortawesome/fontawesome-svg-core": "^6.1.2",
+    "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "gatsby": "^4.17.2",
     "gatsby-plugin-emotion": "^7.17.0",
     "gatsby-plugin-offline": "^5.17.0",
@@ -36,6 +39,7 @@
     "gatsby-remark-images": "^6.17.0",
     "gatsby-remark-prismjs": "^6.17.0",
     "gatsby-remark-smartypants": "^5.17.0",
+    "gatsby-remark-vscode": "^3.3.1",
     "gatsby-transformer-remark": "^5.17.0",
     "prismjs": "^1.28.0",
     "query-string": "^7.1.1",
