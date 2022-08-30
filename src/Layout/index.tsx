@@ -27,7 +27,5 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   padding-top: 100px;
-  > main {
-    height: 100vh;
-  }
+  height: 100vh;
 `
