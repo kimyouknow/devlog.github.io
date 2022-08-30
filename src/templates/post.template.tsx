@@ -1,9 +1,10 @@
-import React, { FunctionComponent } from 'react'
 import { graphql } from 'gatsby'
+import React from 'react'
 
-type PostTemplateProps = {}
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+interface PostTemplateProps {}
 
-const PostTemplate: FunctionComponent<PostTemplateProps> = function (props) {
+const PostTemplate = (props: PostTemplateProps) => {
   console.log(props)
 
   return <div>Post Template</div>

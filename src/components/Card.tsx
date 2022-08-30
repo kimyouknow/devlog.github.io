@@ -1,3 +1,5 @@
-export default function Cards() {
-  return <div>Cards</div>
+const Card = () => {
+  return <div>Hello World</div>
 }
+
+export default Card

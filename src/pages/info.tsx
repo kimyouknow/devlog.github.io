@@ -1,6 +1,5 @@
 import { graphql } from 'gatsby'
 import { Link } from 'gatsby'
-import React from 'react'
 
 import Text from '@/components/Text'
 
