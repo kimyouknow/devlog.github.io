@@ -8,6 +8,25 @@ export interface PostHeadInfoProps {
   categories: string[]
 }
 
+const PostHeaderInfo = ({ title, date, categories }: PostHeadInfoProps) => {
+  const goBackPage = () => window.history.back()
+
+  return (
+    <PostHeadInfoWrapper>
+      <PrevPageIcon onClick={goBackPage}>
+        <FontAwesomeIcon icon={faArrowLeft} />
+      </PrevPageIcon>
+      <Title>{title}</Title>
+      <PostData>
+        <div>{categories.join(' / ')}</div>
+        <div>{date}</div>
+      </PostData>
+    </PostHeadInfoWrapper>
+  )
+}
+
+export default PostHeaderInfo
+
 const PostHeadInfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -52,22 +71,3 @@ const PostData = styled.div`
   font-size: 18px;
   font-weight: 700;
 `
-
-const PostHeaderInfo = ({ title, date, categories }: PostHeadInfoProps) => {
-  const goBackPage = () => window.history.back()
-
-  return (
-    <PostHeadInfoWrapper>
-      <PrevPageIcon onClick={goBackPage}>
-        <FontAwesomeIcon icon={faArrowLeft} />
-      </PrevPageIcon>
-      <Title>{title}</Title>
-      <PostData>
-        <div>{categories.join(' / ')}</div>
-        <div>{date}</div>
-      </PostData>
-    </PostHeadInfoWrapper>
-  )
-}
-
-export default PostHeaderInfo

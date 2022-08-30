@@ -13,6 +13,17 @@ interface GatsbyImgProps {
   className?: string
 }
 
+const PostHeader = ({ title, date, categories, thumbnail }: PostHeaderProps) => {
+  return (
+    <PostHeadWrapper>
+      <BackgroundImage image={thumbnail} alt="thumbnail" />
+      <PostHeaderInfo title={title} date={date} categories={categories} />
+    </PostHeadWrapper>
+  )
+}
+
+export default PostHeader
+
 const PostHeadWrapper = styled.div`
   position: relative;
   width: 100%;
@@ -29,14 +40,3 @@ const BackgroundImage = styled((props: GatsbyImgProps) => <GatsbyImage {...props
   object-fit: cover;
   filter: brightness(0.25);
 `
-
-const PostHeader = ({ title, date, categories, thumbnail }: PostHeaderProps) => {
-  return (
-    <PostHeadWrapper>
-      <BackgroundImage image={thumbnail} alt="thumbnail" />
-      <PostHeaderInfo title={title} date={date} categories={categories} />
-    </PostHeadWrapper>
-  )
-}
-
-export default PostHeader
