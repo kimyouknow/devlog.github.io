@@ -1,5 +1,7 @@
 import { action } from '@storybook/addon-actions'
-import GlobalStyle from '../src/styles/GlobalStyle'
+import { ThemeProvider } from '@emotion/react'
+import GlobalStyle from '@/styles/GlobalStyle'
+import theme from '@/styles/theme'
 
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.
@@ -21,10 +23,10 @@ window.___navigate = pathname => {
 
 export const decorators = [
   Story => (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Story />
-    </>
+    </ThemeProvider>
   ),
 ]
 
