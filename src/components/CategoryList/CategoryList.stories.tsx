@@ -7,7 +7,7 @@ export default {
   component: CategoryList,
   args: {
     selectedCategory: 'All',
-    categoryList: { All: 0 },
+    categoryList: { All: 0, BACK: 2, JS: 2, Optimization: 3 },
   },
 } as ComponentMeta<typeof CategoryList>
 
