@@ -14,7 +14,9 @@
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\"",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "sb": "start-storybook -p 6006 -s public",
+    "build-sb": "build-storybook"
   },
   "repository": {
     "type": "git",
@@ -48,17 +50,29 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.13",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-interactions": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/builder-webpack5": "^6.5.10",
+    "@storybook/manager-webpack5": "^6.5.10",
+    "@storybook/react": "^6.5.10",
+    "@storybook/testing-library": "^0.0.13",
     "@typescript-eslint/eslint-plugin": "^5.30.0",
     "@typescript-eslint/parser": "^5.30.0",
+    "babel-loader": "^8.2.5",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-prettier": "^4.1.0",
+    "eslint-plugin-storybook": "^0.6.4",
     "gatsby-plugin-image": "^2.21.0",
     "gatsby-plugin-sharp": "^4.21.0",
     "gatsby-source-filesystem": "^4.21.1",
     "gatsby-transformer-sharp": "^4.21.0",
     "prettier": "^2.7.1",
+    "storybook-addon-gatsby": "^0.0.5",
     "typescript": "^4.7.4"
   }
 }
