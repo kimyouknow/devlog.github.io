@@ -23,7 +23,7 @@ export const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => <L
   cursor: pointer;
   margin-right: 12px;
   padding: 5px 0;
-  color: ${({ active, theme: { COLORS } }) => (active ? COLORS.BLACK : COLORS.GREYSCALE['700'])};
+  color: ${({ active, theme: { COLORS } }) => (active ? COLORS.BLACK : COLORS.GREYSCALE['600'])};
   ${({ theme: { typography } }) => typography.linkBase};
   vertical-align: center;
   &:last-of-type {
