@@ -10,7 +10,7 @@ export interface CategoryListProps {
 const CategoryList = ({ selectedCategory, categoryList }: CategoryListProps) => {
   const { All: AllCategoryTag, ...restCategoryList } = categoryList
   return (
-    <S.Container>
+    <S.CategoryList>
       <S.AllCategoryTag to="/?category=All" active>
         전체 {AllCategoryTag}개의 포스팅
       </S.AllCategoryTag>
@@ -19,7 +19,7 @@ const CategoryList = ({ selectedCategory, categoryList }: CategoryListProps) => 
           #{name}({count})
         </S.CategoryItem>
       ))}
-    </S.Container>
+    </S.CategoryList>
   )
 }
 
