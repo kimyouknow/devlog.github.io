@@ -12,6 +12,7 @@ import { PostListItemType } from '@/types/PostItem.types'
 type IndexPageProps = {
   location: {
     search: string
+    hash: string
   }
   data: {
     allMarkdownRemark: {
@@ -26,7 +27,7 @@ type IndexPageProps = {
 }
 
 const IndexPage = ({
-  location: { search },
+  location: { search, hash },
   data: {
     allMarkdownRemark: { edges },
     file: {
@@ -34,7 +35,7 @@ const IndexPage = ({
     },
   },
 }: IndexPageProps) => {
-  const parsed: ParsedQuery<string> = queryString.parse(search)
+  const parsed: ParsedQuery<string> = queryString.parse(hash)
   const selectedCategory = typeof parsed.category !== 'string' || !parsed.category ? 'All' : parsed.category
   // category 프로퍼티 값이 문자열 형태가 아니거나 존재하지 않는 경우에는 기본적으로 카테고리 값을 All로 지정하고, 그러지 않은 경우에는 파싱한 값을 지정
   const categoryList = useMemo(
