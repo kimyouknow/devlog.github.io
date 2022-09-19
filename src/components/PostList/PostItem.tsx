@@ -2,7 +2,7 @@ import { PostFrontmatterType } from '@/types/PostItem.types'
 
 import * as S from './PostList.style'
 
-interface PostItemProps extends PostFrontmatterType {
+export interface PostItemProps extends PostFrontmatterType {
   link: string
 }
 

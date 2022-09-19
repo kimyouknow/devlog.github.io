@@ -37,23 +37,19 @@ export const PostItemContent = styled.div`
   padding: 15px;
 `
 
-export const Title = styled.div`
-  display: -webkit-box;
+export const Title = styled.h2`
   overflow: hidden;
   margin-bottom: 3px;
   text-overflow: ellipsis;
   white-space: normal;
   overflow-wrap: break-word;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  font-size: 20px;
-  font-weight: 700;
+  ${({ theme: { typography } }) => typography.linkLarge}
 `
 
-export const Date = styled.div`
-  font-size: 14px;
-  font-weight: 400;
-  opacity: 0.7;
+export const Date = styled.span`
+  ${({ theme: { typography } }) => typography.textSmall}
+  color: ${({ theme: { COLORS } }) => COLORS.GREYSCALE[600]};
+  line-height: 16px;
 `
 
 export const Category = styled.div`
@@ -67,21 +63,22 @@ export const CategoryItem = styled.div`
   margin: 2.5px 5px;
   padding: 3px 5px;
   border-radius: 3px;
-  background: black;
-  font-size: 14px;
-  font-weight: 700;
-  color: white;
+  background-color: ${({ theme: { COLORS } }) => COLORS.GREYSCALE[900]};
+  ${({ theme: { typography } }) => typography.linkSmall}
+  line-height: 18px;
+  color: ${({ theme: { COLORS } }) => COLORS.WHITE}; ;
 `
 
-export const Summary = styled.div`
+export const Summary = styled.p`
+  // 두 줄 이상 ...처리
   display: -webkit-box;
+  -webkit-line-clamp: 2; // 원하는 라인수
+  -webkit-box-orient: vertical;
+  overflow-wrap: break-word;
   overflow: hidden;
-  margin-top: auto;
   text-overflow: ellipsis;
   white-space: normal;
-  overflow-wrap: break-word;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  font-size: 16px;
-  opacity: 0.8;
+
+  ${({ theme: { typography } }) => typography.textSmall}
+  color: ${({ theme: { COLORS } }) => COLORS.GREYSCALE[800]};
 `
