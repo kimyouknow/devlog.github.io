@@ -1,6 +1,5 @@
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
-import { GatsbyImage } from 'gatsby-plugin-image'
 
 // PostList에 대한 스타일
 export const Container = styled.div`
@@ -30,13 +29,6 @@ export const PostItemWrapper = styled(Link)`
   &:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
-`
-
-export const ThumbnailImage = styled(GatsbyImage)`
-  width: 100%;
-  height: 200px;
-  border-radius: 10px 10px 0 0;
-  object-fit: cover;
 `
 
 export const PostItemContent = styled.div`
