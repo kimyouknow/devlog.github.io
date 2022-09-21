@@ -1,16 +1,6 @@
 const path = require('path')
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-// exports.createPages = async ({ actions }) => {
-//   const { createPage } = actions
-//   createPage({
-//     path: "/using-dsg",
-//     component: require.resolve("./src/templates/using-dsg.js"),
-//     context: {},
-//     defer: true,
-//   })
-// }
-
 // Setup Import Alias
 exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
   const output = getConfig().output || {}
@@ -32,7 +22,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode })
 
-    createNodeField({ node, name: 'slug', value: slug })
+    // slug데이터가 /test/ 이렇게 나와서 뒤에 / 제거 (/test/ -> /test)
+    createNodeField({ node, name: 'slug', value: slug.slice(0, -1) })
   }
 }
 
