@@ -76,13 +76,6 @@ module.exports = {
               rel: 'nofollow',
             },
           },
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
           {
             resolve: `gatsby-remark-vscode`,
             options: {
