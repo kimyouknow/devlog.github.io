@@ -36,7 +36,7 @@ CORS는 다른 출처임에도 브라우저상에서 서로 상호작용이 가�
 
 SOP는 다른 출처의 리소스를 사용하는 것에 제한하는 보안 방식입니다. `origin(출처)`은 url의 구성요소 중 `protocol, domain, port`로 이뤄져있습니다.
 
-![https://user-images.githubusercontent.com/71386219/156564837-bac02ebd-921f-4abc-9aa8-b06a18563b40.jpg](https://user-images.githubusercontent.com/71386219/156564837-bac02ebd-921f-4abc-9aa8-b06a18563b40.jpg)
+![sop](./sop.png)
 
 브라우저는 protocal, domain, port 중 어느 하나라도 다르면 다른 origin이라고 판단합니다.
 
@@ -86,7 +86,7 @@ SOP는 다른 출처의 리소스를 사용하는 것에 제한하는 보안 방
 - Accept, Accept-Language, Content-Language, Content-Type, DPR, Downlink, Save-Data, Viewport-Width, Width를 제외한 헤더를 사용하면 안 됨.
 - Content-Type을 사용할 경우 application/x-www-form-urlencoded, multipart/form-data, text/plain만 허용 (application/json이 안됨)
 
-![https://user-images.githubusercontent.com/71386219/210809753-861d5827-02de-4e4d-9587-2814ef675826.png](https://user-images.githubusercontent.com/71386219/210809753-861d5827-02de-4e4d-9587-2814ef675826.png)
+![cors-simple](./cors-simple.png)
 
 사진 출처: [CORS는 왜 이렇게 우리를 힘들게 하는걸까?](https://evan-moon.github.io/2020/05/21/about-cors/)
 
@@ -94,7 +94,7 @@ SOP는 다른 출처의 리소스를 사용하는 것에 제한하는 보안 방
 
 예비 요청에서는 `예비 요청(preflight)`과 `본 요청`을 나누어 서버로 전송합니다. 예비 요청에는 http 메서드중 `OPTIONS`메소드가 사용됩니다. 예비요청은 본 요청을 보내기 전 브라우저 스스로 이 요청이 안전한지 확인하는 역할을 합니다.
 
-[https://user-images.githubusercontent.com/71386219/210809721-27c889e1-8876-4bac-892d-e1291f6cfbb5.png](https://user-images.githubusercontent.com/71386219/210809721-27c889e1-8876-4bac-892d-e1291f6cfbb5.png)
+![cors-preflight](./cors-preflight.png)
 
 사진 출처: [CORS는 왜 이렇게 우리를 힘들게 하는걸까?](https://evan-moon.github.io/2020/05/21/about-cors/)
 
