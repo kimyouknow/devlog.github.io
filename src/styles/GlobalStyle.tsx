@@ -2,8 +2,11 @@ import { Global, css } from '@emotion/react'
 
 import fonts from '@/fonts'
 
+import Normalize from './Normalize'
+
 const styles = css`
   ${fonts}
+  ${Normalize}
   * {
     font-family: 'AppleSDGothicNeo', 'Noto Sans', 'sans-serif';
     box-sizing: border-box;
