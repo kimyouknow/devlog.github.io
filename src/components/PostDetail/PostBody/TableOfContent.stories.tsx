@@ -1,6 +1,6 @@
 import { ComponentMeta, Story } from '@storybook/react'
 
-import TableOfContent, { TableOfContentProps } from './index'
+import TableOfContent, { TableOfContentProps } from './TableOfContent'
 
 export default {
   title: 'CATEGORY/TableOfContent',
