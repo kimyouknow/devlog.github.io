@@ -28,6 +28,7 @@ const styles = css`
   body,
   #___gatsby {
     height: 100%;
+    scroll-behavior: smooth;
   }
 
   a,
