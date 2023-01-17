@@ -1,23 +1,12 @@
-import styled from '@emotion/styled'
+import { css } from '@emotion/react'
 
-interface PostContentProps {
-  html: string
-}
-
-// 문자열 형태의 HTML 코드를 출력하는 것도 dangerouslySetInnerHTML 속성을 통해 간단하게 구현이 가능
-const PostContent = ({ html }: PostContentProps) => {
-  return <MarkdownRenderer dangerouslySetInnerHTML={{ __html: html }} />
-}
-
-export default PostContent
-
-const MarkdownRenderer = styled.div`
+const MarkdownStyle = css`
   // Renderer Style
   display: flex;
   flex-direction: column;
   width: 768px;
   margin: 0 auto;
-  padding: 100px 0;
+  min-width: 680px;
   word-break: break-all;
 
   // Markdown Style
@@ -35,13 +24,23 @@ const MarkdownRenderer = styled.div`
   h2,
   h3 {
     font-weight: 800;
-    margin-bottom: 30px;
+    margin-bottom: 32px;
+  }
+
+  // TOC 클릭시 헤더가 보이게끔 이동하기 위한 속성
+  h1[id],
+  h2[id],
+  h3[id],
+  h4[id],
+  h5[id],
+  h6[id] {
+    scroll-margin-top: 6rem; // 각 태그의 높이 만큼
   }
 
   * + h1,
   * + h2,
   * + h3 {
-    margin-top: 80px;
+    margin-top: 32px;
   }
 
   hr + h1,
@@ -64,7 +63,7 @@ const MarkdownRenderer = styled.div`
 
   // Adjust Quotation Element Style
   blockquote {
-    margin: 30px 0;
+    margin: 12px 0;
     padding: 5px 15px;
     border-left: 2px solid #000000;
     font-weight: 800;
@@ -74,7 +73,12 @@ const MarkdownRenderer = styled.div`
   ol,
   ul {
     margin-left: 20px;
-    padding: 30px 0;
+    padding: 12px 0;
+  }
+
+  ul,
+  li {
+    list-style: disc;
   }
 
   // Adjust Horizontal Rule style
@@ -103,7 +107,12 @@ const MarkdownRenderer = styled.div`
 
   code[class*='language-'],
   pre[class*='language-'] {
-    tab-size: 2;
+    padding: 1.6px 4.8px;
+    font-size: 14.4px;
+    background-color: rgb(215 218 221); // dark: rgb(73, 80, 87)
+    font-weight: bold;
+    color: rgb(33, 37, 41); //dark: rgb(248, 249, 250);
+    font-size: 14.4px;
   }
 
   // Markdown Responsive Design
@@ -134,3 +143,5 @@ const MarkdownRenderer = styled.div`
     }
   }
 `
+
+export default MarkdownStyle

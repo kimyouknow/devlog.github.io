@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 
 const customUtteranceAttribute = {
   src: 'https://utteranc.es/client.js',
-  repo: 'kimyouknow/devlog.github.io',
+  repo: 'kimyouknow/kimyouknow.github.io',
   'issue-term': 'pathname',
   theme: 'github-light',
   label: '💬 comments',
