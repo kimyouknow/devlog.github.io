@@ -105,14 +105,19 @@ const MarkdownStyle = css`
     }
   }
 
-  code[class*='language-'],
-  pre[class*='language-'] {
+  code[class*='language-text'],
+  pre[class*='language-text'] {
     padding: 1.6px 4.8px;
     font-size: 14.4px;
     background-color: rgb(215 218 221); // dark: rgb(73, 80, 87)
     font-weight: bold;
     color: rgb(33, 37, 41); //dark: rgb(248, 249, 250);
     font-size: 14.4px;
+  }
+
+  code[class*='language-'],
+  pre[class*='language-'] {
+    tab-size: 2;
   }
 
   // Markdown Responsive Design
