@@ -15,11 +15,11 @@ const Template: Story<PostListProps> = args => <PostList {...args} />
 export const Default = Template.bind({})
 Default.args = {
   selectedCategory: 'All',
-  posts: posts,
+  posts,
 }
 
 export const SelectJSCategory = Template.bind({})
 SelectJSCategory.args = {
   selectedCategory: 'javascript',
-  posts: posts,
+  posts,
 }

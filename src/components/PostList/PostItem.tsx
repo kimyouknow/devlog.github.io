@@ -1,8 +1,8 @@
-import { PostFrontmatterType } from '@/types/PostItem.types'
+import { PostFrontmatterTypeOmitThumbnail } from '@/types/PostItem.types'
 
 import * as S from './PostList.style'
 
-export interface PostItemProps extends PostFrontmatterType {
+export interface PostItemProps extends PostFrontmatterTypeOmitThumbnail {
   link: string
 }
 
