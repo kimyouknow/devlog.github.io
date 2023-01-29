@@ -1,4 +1,4 @@
-import CategoryList, { CategoryListProps } from '@/components/CategoryHeader/CategoryList'
+import CategoryList, { CategoryListProps } from '@/components/CategoryList'
 
 import * as S from './CategoryHeader.style'
 import CategoryInfo from './CategoryInfo'
