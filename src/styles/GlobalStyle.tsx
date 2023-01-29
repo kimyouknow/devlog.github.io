@@ -48,6 +48,7 @@ const styles = css`
   body {
     --color-background: #f3f5f7;
     --color-background-secondary: #ffffff;
+    --color-chip: #eceef1;
     --color-text: #00214d;
     --color-heading-text: #000;
     --color-paragraph: #1b2e46;
@@ -72,6 +73,7 @@ const styles = css`
   body.dark {
     --color-background: #242629;
     --color-background-secondary: #151519;
+    --color-chip: #242629;
     --color-text: #dbdbdb;
     --color-heading-text: #fff;
     --color-paragraph: #abb5c3;
