@@ -44,7 +44,12 @@ export const CategoryItem = styled(({ active, ...props }: GatsbyLinkProps) => <L
 
   color: var(--color-text);
   background-color: var(--color-category-chip);
-  border: 1px solid ${({ active }) => (active ? 'var(--color-text);' : 'var(--color-background)')};
+  border: 2px solid ${({ active }) => (active ? 'var(--color-text);' : 'var(--color-background)')};
+
+  &:hover {
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+  }
 
   &:last-of-type {
     margin-right: 0;
