@@ -1,9 +1,8 @@
 import { useState } from 'react'
 
-import ThemeSwitchButton from '@/components/ThemeSwitchButton'
-
 import BlogTitle from './BlogTitle'
 import * as S from './GlobalNavigation.style'
+import ThemeSwitchButton from './ThemeSwitchButton'
 
 const ROUTE_LINKS = [
   { label: 'Home', url: '/' },
