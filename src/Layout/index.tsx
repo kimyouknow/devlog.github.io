@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 
 import Footer from '@/components/Footer'
 import GlobalNavigation from '@/components/GlobalNavigation'
+import ThemeModeProvider from '@/context/ThemeMode.Provider'
 import Styles from '@/styles'
 
 import * as S from './Layout.style'
@@ -12,13 +13,15 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <Styles>
-      <S.Container>
-        <GlobalNavigation />
-        <main>{children}</main>
-        <Footer />
-      </S.Container>
-    </Styles>
+    <ThemeModeProvider>
+      <Styles>
+        <S.Container>
+          <GlobalNavigation />
+          <main>{children}</main>
+          <Footer />
+        </S.Container>
+      </Styles>
+    </ThemeModeProvider>
   )
 }
 
