@@ -1,4 +1,4 @@
-import * as S from './CategoryList.style'
+import * as S from './CategoryHeader.style'
 
 export interface CategoryListProps {
   selectedCategory: string
@@ -14,6 +14,7 @@ const CategoryList = ({ selectedCategory, categoryList }: CategoryListProps) => 
       <S.AllCategoryTag to="/?category=All" active={'All' === selectedCategory}>
         전체 {AllCategoryTag}개의 포스팅
       </S.AllCategoryTag>
+
       {Object.entries(restCategoryList).map(([name, count]) => (
         <S.CategoryItem key={name} to={`/#category=${name}`} active={name === selectedCategory}>
           #{name}({count})
