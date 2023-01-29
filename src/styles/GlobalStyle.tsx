@@ -60,9 +60,9 @@ const styles = css`
     --color-table-border: #d0d7de;
     --color-navigation-shadow: rgba(0, 0, 0, 0.08);
 
-    /* --color-primary: 
-    --color-secondary:
-    --color-tertiary: */
+    --color-primary: #218bff;
+    --color-secondary: #54aeff;
+    /* --color-tertiary: */
     --color-white: #f3f5f7;
     --color-black: #222;
     --color-gray: #5a6072;
@@ -85,8 +85,8 @@ const styles = css`
     --color-table-border: #424242;
     --color-navigation-shadow: rgba(0, 0, 0, 0.08);
 
-    /* --color-primary:  */
-    /* --color-secondary:  */
+    --color-primary: #79c0ff;
+    --color-secondary: #1f6feb;
     /* --color-tertiary:  */
   }
 `
