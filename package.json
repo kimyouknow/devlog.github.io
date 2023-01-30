@@ -90,11 +90,5 @@
     "src/**": [
       "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\""
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "yarn build"
-    }
   }
 }
