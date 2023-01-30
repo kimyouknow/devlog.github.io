@@ -1,6 +1,6 @@
 import BLOG_CONFIG from '@/constant/blog.config'
 
-import * as S from '../CategoryHeader.style'
+import * as S from './CategoryHeader.style'
 
 const CategoryInfo = () => {
   return (

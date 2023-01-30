@@ -1,6 +1,6 @@
 import { ComponentMeta, Story } from '@storybook/react'
 
-import CategoryList, { CategoryListProps } from './index'
+import CategoryList, { CategoryListProps } from './CategoryList'
 
 export default {
   title: 'CATEGORY/CategoryList',
