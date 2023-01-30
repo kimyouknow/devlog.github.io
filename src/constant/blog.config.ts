@@ -12,8 +12,14 @@ const BLOG_CONFIG = {
     about: '',
   },
   icon: `content/assets/pencil.png`,
-  comment: {
-    utterances: 'kimyouknow/kimyouknow.github.io',
+  utterances: {
+    src: 'https://utteranc.es/client.js',
+    repo: 'kimyouknow/kimyouknow.github.io',
+    'issue-term': 'pathname',
+    theme: 'github-light',
+    label: '💬 comments',
+    crossorigin: 'anonymous',
+    async: 'true',
   },
 }
 
