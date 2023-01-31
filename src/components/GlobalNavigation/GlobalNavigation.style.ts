@@ -25,12 +25,6 @@ export const Container = styled.header<{ isHidden: boolean }>`
 
 export const BlogTitle = styled.div``
 
-export const ProfileImage = styled.img`
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-`
-
 export const NavLinks = styled.nav`
   > ul {
     display: flex;

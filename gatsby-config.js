@@ -13,8 +13,6 @@ module.exports = {
         allExtensions: true,
       },
     },
-    `gatsby-plugin-emotion`,
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -25,8 +23,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/static`,
+        name: `assets`,
+        path: `${__dirname}/assets`,
       },
     },
     {
@@ -39,8 +37,6 @@ module.exports = {
         },
       },
     },
-    `gatsby-plugin-image`,
-    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -94,5 +90,9 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-image`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-emotion`,
+    `gatsby-plugin-react-helmet`,
   ],
 }
