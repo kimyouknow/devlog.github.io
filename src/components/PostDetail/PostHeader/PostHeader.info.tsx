@@ -1,6 +1,3 @@
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import * as S from './PostHeader.style'
 
 export interface PostHeadInfoProps {
@@ -10,13 +7,8 @@ export interface PostHeadInfoProps {
 }
 
 const PostHeaderInfo = ({ title, date, categories }: PostHeadInfoProps) => {
-  const goBackPage = () => window.history.back()
-
   return (
     <S.PostHeadInfoWrapper>
-      <S.PrevPageIcon onClick={goBackPage}>
-        <FontAwesomeIcon icon={faArrowLeft} />
-      </S.PrevPageIcon>
       <S.Title>{title}</S.Title>
       <S.PostData>
         <div>{categories.map(v => v.toUpperCase()).join(' / ')}</div>
