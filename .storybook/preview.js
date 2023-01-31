@@ -1,6 +1,7 @@
 import { action } from '@storybook/addon-actions'
 import { ThemeProvider } from '@emotion/react'
 import GlobalStyle from '@/styles/GlobalStyle'
+import ThemeModeProvider from '@/context/ThemeMode.Provider'
 import theme from '@/styles/theme'
 
 // Gatsby's Link overrides:
@@ -23,10 +24,12 @@ window.___navigate = pathname => {
 
 export const decorators = [
   Story => (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <Story />
-    </ThemeProvider>
+    <ThemeModeProvider>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Story />
+      </ThemeProvider>
+    </ThemeModeProvider>
   ),
 ]
 
