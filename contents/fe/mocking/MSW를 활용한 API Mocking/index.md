@@ -10,11 +10,11 @@ thumbnail: './overview-msw.png'
 
 MSW와 faker.js를 활용해 Mocking 환경을 구성해 프론트 엔드 개발 생산성을 개선해본 경험에 대한 글입니다.
 
-MSW 및 mocking에 대한 아이디어의 대부분을 [kakao-tech: Mocking으로 생산성까지 챙기는 FE 개발](https://tech.kakao.com/2021/09/29/mocking-fe/) 해당 글을 통해 알게 되었습니다. 참고한 글만큼 전문적이지는 못하지만 제가 고민한 mocking에 대한 내용과 어떤 생각을 가지고 msw를 도입하고 어떤 방법으로 활용했는지 공유하고자 합니다!
+MSW 및 mocking에 대한 아이디어의 대부분을 [kakao-tech: Mocking으로 생산성까지 챙기는 FE 개발](https://tech.kakao.com/2021/09/29/mocking-fe/) 해당 글을 통해 알게 되었습니다. 참고한 글만큼 전문적이지는 못하지만 제가 고민한 mocking에 대한 내용과 어떤 생각을 가지고 MSW를 도입하고 어떤 방법으로 활용했는지 공유하고자 합니다!
 
-# 1. Mocking API를 사용한 이유
+## 1. Mocking API를 사용한 이유
 
-## Frontend(FE) 개발자의 입장에서 생긴 개발 병목 현상
+### Frontend(FE) 개발자의 입장에서 생긴 개발 병목 현상
 
 > “000 API 언제쯤 완성되는지 알 수 있을까요???”
 
@@ -24,13 +24,13 @@ FE 개발을 하면서 BE 개발에 의존적인 상황이 종종 생겼습니�
 
 **프로젝트를 진행하면서 기획, FE, BE, 디자인 개발이 동시에 진행되다 보니 서비스의 엔드 포인트를 담당하는 FE는 의존적인 작업이 많아지고, 그에 따른 개발 진행이 더디게 되었습니다.** 그렇다고 마냥 기다릴 수 없는 상황에서 샘플 데이터와 간단한 배치만 하고 FE 개발을 진행했습니다. API가 완성되거나 디자인이 완성되면 FE 코드를 수정해야 하는 일이 빈번했고, 같은 로직에 대한 작업을 2, 3번씩 하는 경우가 많았습니다. 또한, API가 완성되고 나서야 API의 설계에 대한 오류를 찾을 수 있어 피드백 작업이 늦어졌습니다.
 
-## FE에서 Mocking 해서 병목 현상을 해결하자!
+### FE에서 Mocking 해서 병목 현상을 해결하자!
 
 어떻게 하면 다른 팀 작업 현황에 종속적이지 않고, 생산성 있는 개발을 할 수 있을까 고민하던 도중 [kakao-tech: Mocking으로 생산성까지 챙기는 FE 개발](https://tech.kakao.com/2021/09/29/mocking-fe/) 이라는 글을 발견했습니다. 해당 글에서는 저희가 했던 고민과 비슷한 고민이 담겨 있었고, 그에 대한 해결방안으로 `Mocking을 통한 사전 개발`을 제시했습니다.
 
 우선, BE 개발의 의존성을 줄일 방법을 고민했습니다. BE개발의 의존성을 줄이기 위해서는 BE 개발자와 함께 정한 API의 명세를 토대로 FE에서 실제 API를 mocking할 필요가 있었습니다. (지금 와서 생각해보면 제가 미리 같이 정한 API 명세를 제대로 활용하지 못한 것 같습니다.😅 ) 정해진 API 명세로 FE 개발을 진행한 뒤, BE 작업이 완료되는 시점에 API 주소만 바꿔서 테스트하면 효율적인 개발이 가능해질 것이라고 기대했습니다.
 
-# 2. 여러 가지 대안 중 MSW를 선택한 이유
+## 2. 여러 가지 대안 중 MSW를 선택한 이유
 
 Mock API란 실제 API가 완성되기 전까지 프론트에서 사용할 가짜 API를 의미합니다. mocking api tool에는 json-server, postman-mock-server, MSW, express 등등 다양한 방법이 있습니다.
 
@@ -47,7 +47,7 @@ Mock API란 실제 API가 완성되기 전까지 프론트에서 사용할 가�
 | express             | 실제 API와 거의 유사한 완성도로 실행할 수 있다. <br/> rest api server 그 자체를 만들 수 있다.                             | 학습 비용이 많이 든다 <br /> 실제 API와 거의 유사한 만큼 구축 시간이 오래 걸린다.                  |
 | msw                 | 실제 API와 거의 유사한 완성도로 실행할 수 있다. <br/> FE 폴더 내에서 쉽게 구축할 수 있다.                                 | 배포환경에서 테스트 API를 사용할 수 없다. <br /> 별도의 DB 없이 런타임의 메모리 데이터를 사용한다. |
 
-# 3. MSW가 동작하는 방식
+## 3. MSW가 동작하는 방식
 
 - service worker란?
 - msw 동작 방식
@@ -56,7 +56,7 @@ Mock API란 실제 API가 완성되기 전까지 프론트에서 사용할 가�
 
 앞서 언급했듯이 MSW는 공식문서에서 “**_네트워크 수준에서 요청을 가로채서 모의합니다. 테스트, 개발 및 디버깅을 위해 동일한 모의 정의를 원활하게 재사용합니다._**” 라고 소개하고 있습니다. MSW는 mock서버를 별도로 구축할 필요 없이 네트워크 수준의 API mocking을 가능하게 합니다. MSW가 이러한 기능을 제공할 수 있는 이유는 `Service Worker를 통해 HTTP 요청을 가로채기 때문`입니다.
 
-## Service worker란?
+### Service worker란?
 
 > 서비스 워커는 웹 응용 프로그램, 브라우저, 그리고 (사용 가능한 경우) 네트워크 사이의 프록시 서버 역할을 합니다. - mdn : service worker API
 
@@ -66,9 +66,9 @@ Serine Worker란 web server와 web browser 사이의 `프록시`처럼 동작하
 
 Service Worker를 통해 백그라운드 동기화, 높은 비용의 계산을 대신 처리, 푸시 이벤트 생성 등의 다양한 기능을 구현할 수 있습니다. MSW는 Service Woken의 기능 중 `네트워크의 요청을 가로채는 행위`를 활용합니다.
 
-## MSW 동작 원리 및 활용 방법
+### MSW 동작 원리 및 활용 방법
 
-### MSW 동작 원리
+#### MSW 동작 원리
 
 브라우저에서 MSW는 아래 그림처럼 동작합니다.
 
@@ -82,7 +82,7 @@ Service Worker를 통해 백그라운드 동기화, 높은 비용의 계산을 �
 4. 생성한 Mock 응답을 제공합니다.
 5. 제공된 Mock 응답을 Response로 반환합니다.
 
-### MSW 활용 방법
+#### MSW 활용 방법
 
 MSW를 활용하여 개발 단계를 다음과 같이 수정해봤습니다.
 
@@ -98,9 +98,9 @@ MSW를 활용하여 개발 단계를 다음과 같이 수정해봤습니다.
 
 4번 과정에서 실제 네트워크 수준과 비슷한 환경으로 API 환경을 구성하니 5번 단계에서 수정 작업 시간이 감소했습니다.
 
-# 4. 사용 방법 및 적용 방법
+## 4. 사용 방법 및 적용 방법
 
-## 핵심 tool 소개
+### 핵심 tool 소개
 
 프로젝트에서 사용한 핵심 툴은 다음과 같습니다.
 
@@ -150,7 +150,7 @@ mock API를 위한 유틸 함수를 만들어서 반복되는 코드를 줄였�
 - randomResponse(res, ctx, successData): 에러 상황을 위해 램덤으로 상태코드를 반환하는 유틸 함수
 - getResponseWithData(): response 형태를 제공하는 유틸 함수
 
-## **faker.js를 활용한 Mock 데이터 생성**
+### **faker.js를 활용한 Mock 데이터 생성**
 
 기존에는 mock 데이터를 [mockaroo](https://www.mockaroo.com/)를 활용해서 객체 형식으로 만들어서 사용했습니다. 직접 **Mock** 데이터를 하드코딩(hard-coding)했을 때, API 명세가 바뀔 때마다 데이터를 수정하기 어려운 단점이 있었습니다.
 
@@ -203,7 +203,7 @@ const createRandomUserCard = () => ({
 export const createRandomUserList = number => Array.from({ length: number }, () => createRandomUserCard())
 ```
 
-## 설치 및 실행방법
+### 설치 및 실행방법
 
 ![dev.webp](./install.png)
 
@@ -257,7 +257,7 @@ ReactDOM.render(
 
 ![result](./result.png)
 
-## mocks 폴더 구조
+### mocks 폴더 구조
 
 아래 폴더구조는 제가 했던 프로젝트 중 mocks 폴더를 구성한 예시입니다.
 
@@ -315,7 +315,7 @@ export default userHandler
 
 프로젝트 설정은 끝났습니다. 이제 개발환경에 맞게 react script를 실행시켜 원하는 API 환경을 사용하면 됩니다. 🙌
 
-## storybook과 연동
+## 5. storybook과 연동
 
 스토리북 컴포넌트를 만들다보면 순수한 view를 분리하기 어려울 때가 있었습니다. 혹은 API 요청에 따른 화면 상태(loading, error …) 변화를 체크하기 위해 API와 연동해야할 때가 있었습니다. 이때, 실제 API가 아닌 만들어둔 MSW mocking api와 mocking data를 활용해 개발과정을 단축할 수 있었습니다.
 
@@ -363,7 +363,7 @@ LoadingWithSkeleton.args = {
 }
 ```
 
-# 6. 사용 후기 및 개선점
+## 6. 사용 후기 및 개선점
 
 MSW를 도입함으로써 더 이상 BE API가 완성될 때까지 마냥 기다리는 상황은 발생하지 않았습니다. 서비스의 엔드 포인트라는 특성 때문에 BE 작업과 디자인 작업 현황과 완전히 독립적일 수는 없지만 개발 과정에서 기다리는 시간을 줄일 수 있었습니다. (동기적인 작업이 아닌 비동기적인 작업이 가능해졌다고 할 수 있을까요? 😀 )
 
@@ -371,7 +371,7 @@ MSW를 도입함으로써 더 이상 BE API가 완성될 때까지 마냥 기다
 
 앞으로 테스트 코드를 학습하면서 jest 및 react-test-library와 MSW를 함께 사용하며 더 나은 유지보수를 위해 개선할 예정입니다. 🫠
 
-# 참고 자료
+## 참고 자료
 
 [https://tech.kakao.com/2021/09/29/mocking-fe/](https://tech.kakao.com/2021/09/29/mocking-fe/)
 
