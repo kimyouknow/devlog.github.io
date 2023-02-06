@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 const blogConfig = require('./blog-config')
 
 module.exports = {
@@ -106,9 +110,18 @@ module.exports = {
         icon: blogConfig.favicon,
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: blogConfig.siteUrl,
+        sitemap: `${blogConfig.siteUrl}/sitemap.xml`,
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-advanced-sitemap',
   ],
 }
