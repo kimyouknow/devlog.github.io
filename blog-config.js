@@ -12,8 +12,8 @@ module.exports = {
     til: 'https://github.com/kimyouknow/TIL',
   },
   seo: {
-    google: process.env.GATSBY_SEO_GOOGLE,
-    naver: process.env.GATSBY_SEO_NAVER,
+    google: 'tVBxZo5I8DxzZ85vj9woXyc8EAeHxELgaAWw',
+    naver: 'c9a477f101da10816af24aee5c842d24aab22ac6',
   },
   utterances: {
     src: 'https://utteranc.es/client.js',
