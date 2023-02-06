@@ -29,7 +29,7 @@ const blogConfig = {
 }
 
 module.exports = {
-  siteMetadata: blogConfig,
+  siteMetadata: { ...blogConfig },
   plugins: [
     {
       resolve: 'gatsby-plugin-typescript',
