@@ -16,8 +16,8 @@ export const useSiteMetadata = () => {
           siteMetadata {
             author
             title
-            siteUrl
             description
+            siteUrl
             image
             keywords
             favicon
