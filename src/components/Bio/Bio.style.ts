@@ -10,7 +10,7 @@ export const Container = styled.div`
 export const Info = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 12px;
 `
 
 export const Author = styled.h3``
@@ -22,13 +22,16 @@ export const Socials = styled.ul`
   gap: 8px;
   a {
     color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 4px;
 
     :hover {
       color: var(--color-primary);
     }
   }
   a > svg {
-    width: 28px;
-    height: 28px;
+    width: 18px;
+    height: 18px;
   }
 `
