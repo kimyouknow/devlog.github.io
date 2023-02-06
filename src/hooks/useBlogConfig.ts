@@ -9,7 +9,7 @@ interface SiteMeta {
 }
 
 const useBlogConfig = () => {
-  const { site } = useStaticQuery<SiteMeta>(
+  const data = useStaticQuery<SiteMeta>(
     graphql`
       query SiteMetaData {
         site {
@@ -43,7 +43,7 @@ const useBlogConfig = () => {
       }
     `,
   )
-  return site.siteMetadata
+  return data.site.siteMetadata
 }
 
 export default useBlogConfig
