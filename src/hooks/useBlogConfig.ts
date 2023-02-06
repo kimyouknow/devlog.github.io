@@ -1,14 +1,14 @@
 import { useStaticQuery, graphql } from 'gatsby'
 
-import { SiteMetaData } from '@/types/gatsby.type'
+import { ConfigType } from '@/types/gatsby.type'
 
 interface SiteMeta {
   site: {
-    siteMetadata: SiteMetaData
+    siteMetadata: ConfigType
   }
 }
 
-export const useSiteMetadata = () => {
+const useBlogConfig = () => {
   const { site } = useStaticQuery<SiteMeta>(
     graphql`
       query SiteMetaData {
@@ -30,6 +30,14 @@ export const useSiteMetadata = () => {
               google
               naver
             }
+            utterances {
+              src
+              repo
+              theme
+              label
+              crossorigin
+              async
+            }
           }
         }
       }
@@ -37,3 +45,5 @@ export const useSiteMetadata = () => {
   )
   return site.siteMetadata
 }
+
+export default useBlogConfig
