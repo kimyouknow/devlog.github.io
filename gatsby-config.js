@@ -1,7 +1,3 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
 const blogConfig = require('./blog-config')
 
 module.exports = {
