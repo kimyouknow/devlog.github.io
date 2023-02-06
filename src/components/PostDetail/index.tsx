@@ -1,4 +1,5 @@
 import PostFooter from '@/components/PostDetail/PostFooter'
+import SEO from '@/components/SEO'
 import Layout from '@/Layout'
 import { PostPageItemType } from '@/types/PostItem.types'
 
@@ -7,9 +8,12 @@ import PostHeader from './PostHeader'
 
 interface PostPageInfoProps {
   postPageInfo: PostPageItemType
+  href: string
+  author: string
+  favicon: string
 }
 
-const PostDetail = ({ postPageInfo }: PostPageInfoProps) => {
+const PostDetail = ({ postPageInfo, href, author, favicon }: PostPageInfoProps) => {
   const {
     node: {
       tableOfContents,
@@ -21,12 +25,22 @@ const PostDetail = ({ postPageInfo }: PostPageInfoProps) => {
         categories,
         thumbnail: {
           childImageSharp: { gatsbyImageData },
+          publicURL,
         },
       },
     },
   } = postPageInfo
   return (
     <Layout>
+      <SEO
+        author={author}
+        url={href}
+        title={title}
+        description={summary}
+        image={publicURL}
+        keywords={categories}
+        favicon={favicon}
+      />
       <PostHeader title={title} date={date} categories={categories} thumbnail={gatsbyImageData} />
       <PostBody tableOfContents={tableOfContents} html={html} />
       <PostFooter />

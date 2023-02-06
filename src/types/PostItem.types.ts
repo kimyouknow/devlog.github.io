@@ -9,6 +9,7 @@ export interface PostFrontmatterType {
     childImageSharp: {
       gatsbyImageData: GatsbyImageDataType
     }
+    publicURL: string
   }
 }
 
