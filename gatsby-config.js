@@ -1,10 +1,11 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
+const blogConfig = require('./blog-config')
+
 module.exports = {
-  siteMetadata: {
-    title: `개발 블로그`,
-    description: `아직 준비 중입니다.`,
-    author: `yunho/dori`,
-    siteUrl: 'https://kimyouknow.github.io/',
-  },
+  siteMetadata: blogConfig,
   plugins: [
     {
       resolve: 'gatsby-plugin-typescript',
@@ -23,8 +24,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `assets`,
-        path: `${__dirname}/assets`,
+        name: `static`,
+        path: `${__dirname}/static`,
       },
     },
     {
@@ -90,9 +91,37 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-canonical-urls',
+      options: {
+        siteUrl: blogConfig.siteUrl,
+        stripQueryString: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: blogConfig.title,
+        short_name: blogConfig.title,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: blogConfig.favicon,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: blogConfig.siteUrl,
+        sitemap: `${blogConfig.siteUrl}/sitemap.xml`,
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-react-helmet`,
+    'gatsby-plugin-advanced-sitemap',
   ],
 }
