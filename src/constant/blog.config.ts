@@ -1,26 +1,31 @@
-const BLOG_CONFIG = {
-  title: `Yunho.devlog`,
-  author: `김윤호(@kimyouknow)`,
-  introduction: `고민, 문제해결`,
-  siteUrl: 'https://kimyouknow.github.io',
+// eslint-disable-next-line @typescript-eslint/no-var-requires, @typescript-eslint/no-unsafe-assignment
+const blogConfig: ConfigType = require('../../blog-config')
+
+interface ConfigType {
+  title: string
+  author: string
+  description: string
+  introduction: string
+  siteUrl: string
+  image: string
+  keywords: string[]
+  favicon: string
   social: {
-    email: 'kimyouknow@naver.com',
-    github: `https://github.com/kimyouknow`,
-  },
-  info: {
-    til: '',
-    about: '',
-  },
-  icon: `content/assets/pencil.png`,
+    email: string
+    github: string
+  }
   utterances: {
-    src: 'https://utteranc.es/client.js',
-    repo: 'kimyouknow/kimyouknow.github.io',
-    'issue-term': 'pathname',
-    theme: 'github-light',
-    label: '💬 comments',
-    crossorigin: 'anonymous',
-    async: 'true',
-  },
+    src: string
+    repo: string
+    theme: string
+    label: string
+    crossorigin: string
+    async: string
+  }
+}
+
+const BLOG_CONFIG = {
+  ...blogConfig,
 }
 
 export default BLOG_CONFIG

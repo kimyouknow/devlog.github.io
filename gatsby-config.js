@@ -1,10 +1,7 @@
+const blogConfig = require('./blog-config')
+
 module.exports = {
-  siteMetadata: {
-    title: `개발 블로그`,
-    description: `아직 준비 중입니다.`,
-    author: `yunho/dori`,
-    siteUrl: 'https://kimyouknow.github.io/',
-  },
+  siteMetadata: blogConfig,
   plugins: [
     {
       resolve: 'gatsby-plugin-typescript',
@@ -23,8 +20,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `assets`,
-        path: `${__dirname}/assets`,
+        name: `static`,
+        path: `${__dirname}/static`,
       },
     },
     {
