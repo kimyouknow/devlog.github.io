@@ -20,6 +20,16 @@ export const useSiteMetadata = () => {
             description
             image
             keywords
+            favicon
+            social {
+              email
+              github
+              til
+            }
+            seo {
+              google
+              naver
+            }
           }
         }
       }
