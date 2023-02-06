@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[49],{2766:function(t,e,a){a.r(e);var n=a(1008),u=a(1251),l=a(3431);var r=(0,n.Z)("div",{target:"e10mhqmh0"})({name:"1uwviq4",styles:"width:768px;height:80vh;margin:0 auto;display:flex;justify-content:center;align-items:center"});e.default=function(){return(0,l.tZ)(u.Z,null,(0,l.tZ)(r,null,(0,l.tZ)("h1",null,"준비중입니다..😅")))}}}]);
+//# sourceMappingURL=component---src-pages-about-tsx-3523d9bb476ebe8162ba.js.map
