@@ -78,6 +78,8 @@ jobs:
       - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'
+          GATSBY_SEO_GOOGLE: ${{ secrets.GATSBY_SEO_GOOGLE }}
+          GATSBY_SEO_NAVER: ${{ secrets.GATSBY_SEO_NAVER }}
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
