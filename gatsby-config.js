@@ -84,6 +84,7 @@ module.exports = {
               isIconAfterHeader: true,
             },
           },
+          `gatsby-remark-reading-time`,
         ],
       },
     },

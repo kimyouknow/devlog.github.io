@@ -70,6 +70,11 @@ export const PostData = styled.div`
   }
 `
 
+export const PostInfo = styled.div`
+  display: flex;
+  gap: 8px;
+`
+
 export const PrevPageIcon = styled.div`
   display: grid;
   place-items: center;
