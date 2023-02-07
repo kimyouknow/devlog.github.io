@@ -22,7 +22,7 @@ module.exports = {
   utterances: {
     src: 'https://utteranc.es/client.js',
     repo: 'kimyouknow/kimyouknow.github.io',
-    'issue-term': 'pathname',
+    issueTerm: 'pathname',
     theme: 'github-light',
     label: '💬 comments',
     crossorigin: 'anonymous',
