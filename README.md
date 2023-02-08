@@ -21,7 +21,8 @@
 ### 추가
 
 - [x] : 반응형 웹
-- [x] : read time
+- [x] : Read Time
+- [x] : Google Analytics
 - [ ] : 반응 및 조회수 표시
 - [ ] : 검색 기능
 - [x] : 카테고리 검색
