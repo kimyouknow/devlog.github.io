@@ -6,9 +6,9 @@ import { useMemo } from 'react'
 import { GatsbyImageDataType } from '@/types/gatsby.type'
 
 const ImageSizeMap = {
-  s: '32px',
-  m: '64px',
-  l: ' 128px',
+  s: 'var(--icon-medium)',
+  m: 'var(--icon-large)',
+  l: 'var(--icon-xLarge)',
 }
 
 type ImageSize = keyof typeof ImageSizeMap
@@ -65,6 +65,7 @@ const SImage = styled((props: GatsbyImgProps) => <GatsbyImage {...props} />)`
   border-radius: ${({ isCircle }) => isCircle && '50%'};
   &.gatsby-image-wrapper {
     z-index: 0; // IOS에서 border-radius 적용안되는 버그 해결
+    min-width: ${({ size }) => size && ImageSizeMap[size]};
   }
 `
 
