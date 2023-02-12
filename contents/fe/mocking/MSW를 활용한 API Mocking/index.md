@@ -6,7 +6,7 @@ summary: 'MSW와 faker.js를 활용해 Mocking 환경을 구성해 프론트 엔
 thumbnail: './overview-msw.png'
 ---
 
-# 요약
+## 요약
 
 MSW와 faker.js를 활용해 Mocking 환경을 구성해 프론트 엔드 개발 생산성을 개선해본 경험에 대한 글입니다.
 
