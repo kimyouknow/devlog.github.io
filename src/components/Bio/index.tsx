@@ -20,7 +20,7 @@ const Bio = () => {
         <S.Desc>{description}</S.Desc>
         <S.Socials>
           <li>
-            <a href="#" onClick={onClickMailConfig}>
+            <a onClick={onClickMailConfig}>
               <HiOutlineMail />
               Mail
             </a>
