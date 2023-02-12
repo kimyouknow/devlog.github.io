@@ -2,11 +2,11 @@
 date: '2023-01-10'
 title: 'MSW를 활용한 API Mocking'
 categories: ['WEB', '문제해결', 'mocking', '협업']
-summary: '웹 개발을 하다 보면 cors 이슈를 한 번쯤은 경험하게 됩니다. CORS 이슈를 만날 때마다 여러 블로그 글에 나와 있는 해결 방법을 따라 하기 급급했는데 이번 기회에 CORS가 무엇인지 개발과정에서 어떻게 다뤄야 할지 공부해봤습니다.'
+summary: 'MSW와 faker.js를 활용해 Mocking 환경을 구성해 프론트 엔드 개발 생산성을 개선해본 경험에 대한 글입니다.'
 thumbnail: './overview-msw.png'
 ---
 
-# 요약
+## 요약
 
 MSW와 faker.js를 활용해 Mocking 환경을 구성해 프론트 엔드 개발 생산성을 개선해본 경험에 대한 글입니다.
 
