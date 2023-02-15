@@ -2,7 +2,19 @@ import { Helmet } from 'react-helmet'
 
 import { SEOConfigType } from '@/types/gatsby.type'
 
-const SEO = ({ lang = 'ko', author, title, description, siteUrl, image, keywords, favicon, seo }: SEOConfigType) => {
+const SEO = ({
+  lang = 'ko',
+  author,
+  siteName,
+  siteUrl,
+  title = siteName,
+  description,
+  image,
+  keywords,
+  favicon,
+  seo,
+  readingTime,
+}: SEOConfigType) => {
   return (
     <Helmet htmlAttributes={{ lang }}>
       <title>{title}</title>
@@ -16,6 +28,7 @@ const SEO = ({ lang = 'ko', author, title, description, siteUrl, image, keywords
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       {/* property: og */}
       <meta property="og:type" content="website" />
+      <meta property="og:site_name" content={siteName} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={image} />
