@@ -3,10 +3,10 @@ import useBlogConfig from '@/hooks/useBlogConfig'
 import * as S from './GlobalNavigation.style'
 
 const BlogTitle = () => {
-  const { title } = useBlogConfig()
+  const { siteName } = useBlogConfig()
   return (
     <S.BlogTitle>
-      <a href="/">{title}</a>
+      <a href="/">{siteName}</a>
     </S.BlogTitle>
   )
 }
