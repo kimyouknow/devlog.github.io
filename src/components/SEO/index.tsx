@@ -15,6 +15,7 @@ const SEO = ({
   seo,
   readingTime,
 }: SEOConfigType) => {
+  const absoluteImagePath = `${siteUrl}/${image}`
   return (
     <Helmet htmlAttributes={{ lang }}>
       <title>{title}</title>
@@ -30,7 +31,7 @@ const SEO = ({
       <meta property="og:site_name" content={siteName} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={`${siteUrl}${image}`} />
+      <meta property="og:image" content={absoluteImagePath} />
       <meta property="og:url" content={siteUrl} />
       <meta property="og:locale" content="ko_KR" />
       <meta property="og:locale:alternate" content="es_ES" />
@@ -39,7 +40,7 @@ const SEO = ({
       <meta name="twitter:domain" content={siteUrl} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={`${siteUrl}${image}`} />
+      <meta name="twitter:image" content={absoluteImagePath} />
       <meta name="twitter:image:alt" content={description} />
       <meta name="twitter:label1" content="Time to read" />
       <meta name="twitter:data1" content={readingTime} />
