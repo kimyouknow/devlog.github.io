@@ -19,7 +19,18 @@
 
 제가 고민하고 문제를 해결했던 과정이 다른 사람들에게 도움될 수 있으면 합니다.
 
-### 주요기능
+### 💻 기술 스택
+
+<p>
+  <img src="https://img.shields.io/badge/TypeScript-2d79c7?style=flat-square&logo=TypeScript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/React-7ddfff?style=flat-square&logo=React&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Gatsby-663399?style=flat-square&logo=Gatsby&logoColor=white"/>
+  <img src="https://img.shields.io/badge/css-1572B6?style=flat&logo=css3&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Emotion-C865B9?style=flat&logo=emotion&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Storybook-FF4785?style=flat&logo=storybook&logoColor=white"/>
+</p>
+
+### ✨ 주요기능
 
 - 반응형 웹
 - 다크모드
@@ -34,20 +45,18 @@
 - 이미지 최적화
 - github action을 활용한 자동 배포
 
-### 기술 스택
+## 🐛 트러블 슈팅
 
-<p>
-  <img src="https://img.shields.io/badge/TypeScript-2d79c7?style=flat-square&logo=TypeScript&logoColor=white"/>
-  <img src="https://img.shields.io/badge/React-7ddfff?style=flat-square&logo=React&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Gatsby-663399?style=flat-square&logo=Gatsby&logoColor=white"/>
-  <img src="https://img.shields.io/badge/css-1572B6?style=flat&logo=css3&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Emotion-C865B9?style=flat&logo=emotion&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Storybook-FF4785?style=flat&logo=storybook&logoColor=white"/>
-</p>
+- [다크모드 구현 - css variable](https://github.com/kimyouknow/kimyouknow.github.io/pull/12)
+- [다크모드 에러 (dark mode flash error) 수정](https://github.com/kimyouknow/kimyouknow.github.io/pull/20)
+- [반응형 웹 - css variable](https://github.com/kimyouknow/kimyouknow.github.io/pull/18)
+- [SEO, 웹 접근성](https://github.com/kimyouknow/kimyouknow.github.io/pull/15)
+- [github action을 활용한 gh-pages 배포 자동화](https://github.com/kimyouknow/kimyouknow.github.io/pull/9)
+- [이미지 처리](https://github.com/kimyouknow/kimyouknow.github.io/pull/9)
 
-## 시작 가이드
+## 🚩 시작 가이드
 
-### 💻 설치 및 배포
+### 🎉 설치 및 배포
 
 #### 1. 실행하기
 
@@ -208,16 +217,7 @@ thumbnail: './thumbnail.png'
 └── static # 이미지 파일
 ```
 
-## 트러블 슈팅
-
-- [다크모드 구현 - css variable](https://github.com/kimyouknow/kimyouknow.github.io/pull/12)
-- [다크모드 에러 (dark mode flash error) 수정](https://github.com/kimyouknow/kimyouknow.github.io/pull/20)
-- [반응형 웹 - css variable](https://github.com/kimyouknow/kimyouknow.github.io/pull/18)
-- [SEO, 웹 접근성](https://github.com/kimyouknow/kimyouknow.github.io/pull/15)
-- [github action을 활용한 gh-pages 배포 자동화](https://github.com/kimyouknow/kimyouknow.github.io/pull/9)
-- [이미지 처리](https://github.com/kimyouknow/kimyouknow.github.io/pull/9)
-
-## 남은 개발 목록
+## ✅ 남은 개발 목록
 
 ### 핵심
 
