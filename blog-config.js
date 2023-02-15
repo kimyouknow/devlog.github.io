@@ -3,7 +3,7 @@ require('dotenv').config({
 })
 
 module.exports = {
-  siteName: `Yunho.blog`,
+  title: `Yunho.blog`,
   author: 'Yunho(kimyouknow)',
   description: `안녕하세요. 프론트엔드 개발자 김윤호입니다. 고민과 문제 해결 과정을 공유하고 있습니다.`,
   siteUrl: 'https://kimyouknow.github.io/',

@@ -11,9 +11,8 @@ export interface GatsbyImgProps {
 export interface SEOConfigType {
   lang?: string
   author: string
-  siteName: string
+  title: string
   siteUrl: string
-  title?: string
   description: string
   image: string
   keywords: string[]
@@ -22,7 +21,6 @@ export interface SEOConfigType {
     google: string
     naver: string
   }
-  readingTime?: string
 }
 
 export interface ConfigType extends SEOConfigType {
