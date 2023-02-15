@@ -47,10 +47,22 @@
 
 ## 🐛 트러블 슈팅
 
+다크모드
+
 - [다크모드 구현 - css variable](https://github.com/kimyouknow/kimyouknow.github.io/pull/12)
 - [다크모드 에러 (dark mode flash error) 수정](https://github.com/kimyouknow/kimyouknow.github.io/pull/20)
+
+반응형 웹
+
 - [반응형 웹 - css variable](https://github.com/kimyouknow/kimyouknow.github.io/pull/18)
+
+SEO, 웹접근성
+
 - [SEO, 웹 접근성](https://github.com/kimyouknow/kimyouknow.github.io/pull/15)
+- [Slack에 메타 태그가 적용되지 않는 버그 수정](https://github.com/kimyouknow/kimyouknow.github.io/pull/27)
+
+기타
+
 - [github action을 활용한 gh-pages 배포 자동화](https://github.com/kimyouknow/kimyouknow.github.io/pull/9)
 - [이미지 처리](https://github.com/kimyouknow/kimyouknow.github.io/pull/9)
 
