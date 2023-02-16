@@ -3,11 +3,13 @@ require('dotenv').config({
 })
 
 module.exports = {
+  lang: 'ko',
   siteName: `Yunho.blog`,
   author: 'Yunho(kimyouknow)',
   description: `안녕하세요. 프론트엔드 개발자 김윤호입니다. 고민과 문제 해결 과정을 공유하고 있습니다.`,
   siteUrl: 'https://kimyouknow.github.io',
-  image: `static/profile-image.png`,
+  profileImage: `profile-image.png`,
+  mainOgImage: 'main-og-image.png',
   keywords: ['개발블로그', '문제해결', 'gatsby'],
   favicon: 'static/pencil.png',
   social: {

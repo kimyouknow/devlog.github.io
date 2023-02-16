@@ -60,6 +60,7 @@ SEO, 웹접근성
 
 - [SEO, 웹 접근성](https://github.com/kimyouknow/kimyouknow.github.io/pull/15)
 - [Slack에 메타 태그가 적용되지 않는 버그 수정](https://github.com/kimyouknow/kimyouknow.github.io/pull/27)
+- [SEO 컴포넌트 리팩토링 및 og:image 에러 수정](https://github.com/kimyouknow/kimyouknow.github.io/pull/31)
 
 기타
 
@@ -113,13 +114,15 @@ Github에서 아래와 같이 세팅 후 원하는 main브랜치에 push하면 �
 
 ```js
 {
+  lang: "", // ko
   title: ``, //Yunho.blog
   author: '', // Yunho(kimyouknow)
   description: ``, // 안녕하세요. 프론트엔드 개발자 김윤호입니다. 고민과 문제 해결 과정을 공유하고 있습니다.
   siteUrl: '', // https://kimyouknow.github.io/
-  image: ``, // static 경로에 원하는 사진을 넣어주시면 프로필 이미지로 반영됩니다. ex) ./static/profile-image.png
+  profileImage: ``, //  static 경로에 있는 사진 파일을 입력하면 프로필 이미지로 반영됩니다. ex) profile-image.png
+  mainOgImage :"", // static 경로에 원하는 사진 파일을 입력하면  메인페이지의 og-image 태그로 반영됩니다.
   keywords: [], // 원하는 키워드를 적어주시면 keywords meta태그에 반영됩니다. ex) '개발블로그', '문제해결', 'gatsby'
-  favicon: '', // static 경로에 원하는 사진을 넣어주시면 favicon 이미지로 반영됩니다. ex) ./static/pencil.png
+  favicon: '', // static 경로에 원하는 사진을 넣어주시면 favicon 이미지로 반영됩니다. ex) /static/pencil.png
   social: {
     email: '', // kimyouknow@naver.com
     github: ``, //https://github.com/kimyouknow
