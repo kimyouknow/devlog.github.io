@@ -118,10 +118,10 @@ Github에서 아래와 같이 세팅 후 원하는 main브랜치에 push하면 �
   author: '', // Yunho(kimyouknow)
   description: ``, // 안녕하세요. 프론트엔드 개발자 김윤호입니다. 고민과 문제 해결 과정을 공유하고 있습니다.
   siteUrl: '', // https://kimyouknow.github.io/
-  profileImage: ``, //  프로필 이미지로 반영됩니다. ex) ./static/profile-image.png
-  mainOgImage :"", // static 경로에 원하는 사진을 넣어주시면 메인페이지의 og-image 태그로 반영됩니다.
+  profileImage: ``, //  static 경로에 있는 사진 파일을 입력하면 프로필 이미지로 반영됩니다. ex) profile-image.png
+  mainOgImage :"", // static 경로에 원하는 사진 파일을 입력하면  메인페이지의 og-image 태그로 반영됩니다.
   keywords: [], // 원하는 키워드를 적어주시면 keywords meta태그에 반영됩니다. ex) '개발블로그', '문제해결', 'gatsby'
-  favicon: '', // static 경로에 원하는 사진을 넣어주시면 favicon 이미지로 반영됩니다. ex) ./static/pencil.png
+  favicon: '', // static 경로에 원하는 사진을 넣어주시면 favicon 이미지로 반영됩니다. ex) /static/pencil.png
   social: {
     email: '', // kimyouknow@naver.com
     github: ``, //https://github.com/kimyouknow
