@@ -60,6 +60,7 @@ SEO, 웹접근성
 
 - [SEO, 웹 접근성](https://github.com/kimyouknow/kimyouknow.github.io/pull/15)
 - [Slack에 메타 태그가 적용되지 않는 버그 수정](https://github.com/kimyouknow/kimyouknow.github.io/pull/27)
+- [SEO 컴포넌트 리팩토링 및 og:image 에러 수정](https://github.com/kimyouknow/kimyouknow.github.io/pull/31)
 
 기타
 
