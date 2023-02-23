@@ -161,11 +161,20 @@ Github에서 아래와 같이 세팅 후 원하는 main브랜치에 push하면 �
 }
 ```
 
+환경변수를 개발 환경에서 사용하기 위해서는 아래와 같이 `.env`파일에 `GATSBY_`로 시작하는 변수로 등록해주세요.
+
 ```env
 # env.development와 env.production에 설정에 맞게 id를 입력해주세요.
 GATSBY_SEO_GOOGLE=
 GATSBY_SEO_NAVER=
 GATSBY_ANALYTICS_GOOGLE=
+```
+
+환경변수를 배포 환경에서 사용하기 위해서는 다음과 같은 Github 설정이 필요합니다.
+
+```bash
+- setting -> secrets and variables -> Actions secrets and variables ->  New secret
+- New secret에 .env파일에 작성한 변수를 key:value 형식으로 입력
 ```
 
 ### ✏️ 글 작성하기
