@@ -1,6 +1,6 @@
 ---
 date: '2023-02-12'
-title: '글을 잘 쓰고 싶은 이유 (Feat. 글또 8기 다짐)'
+title: '글을 잘 쓰고 싶은 이유 (feat. 글또 8기 다짐)'
 categories: ['에세이', '글쓰기']
 summary: '글쓰기를 꾸준히 해야겠다는 계기와 글또 8기 다짐에 관한 글입니다.'
 thumbnail: './overview.png'
