@@ -1,7 +1,7 @@
 ---
 date: '2023-02-25'
 title: '다크모드 개발기(feat. css variable)'
-categories: ['CSS', 'WEB', '문제해결']
+categories: ['WEB', '문제해결', 'CSS']
 summary: 'CSS 변수를 활용한 다크모드 개발 과정을 소개합니다. 초기 렌더링 시 깜빡이는 에러(dark mode flash)와 iframe 댓글 컴포넌트(utterance, giscus)에 다크모드가 적용되지 않은 에러를 해결했습니다.'
 thumbnail: './thumbnail.png'
 ---
@@ -416,7 +416,7 @@ HTML Blocking을 활용해 메인 DOM이 렌더링 되기 전에 CSS 변수를 �
 
 ![깜박임 해결](flash-solution.gif)
 
-### 6. 기타 에러 2: 댓글(utterance, giscus) 컴포넌트에 다크모드가 적용되지 않는 에러
+## 6. 기타 에러 2: 댓글(utterance, giscus) 컴포넌트에 다크모드가 적용되지 않는 에러
 
 댓글 컴포넌트의 경우 iframe 태그를 활용해서 렌더링하고 있습니다. iframe에 제가 설정한 CSS 변수를 적용할 수 없어 `isDark`라는 전역 상태를 두고 상태가 변경될 때마다 다시 댓글 컴포넌트를 렌더링했습니다. 하지만 아래와 같이 기존 컴포넌트가 제거되지 않고 새로운 컴포넌트가 쌓이는 현상이 발생했습니다.
 
