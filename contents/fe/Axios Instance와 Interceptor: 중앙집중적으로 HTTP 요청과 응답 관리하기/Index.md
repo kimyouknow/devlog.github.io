@@ -3,7 +3,7 @@ date: '2023-03-26'
 title: 'Axios Instance와 Interceptor: HTTP 요청과 응답 관리하기'
 categories: ['WEB', 'Axios', 'API', '관심사 분리']
 summary: 'Axios의 Instance와 Interceptor를 활용하여 기본 설정과 공통 처리 로직을 중앙집중적으로 관리하여 중복 코드를 줄일 수 있었습니다. 또한, 필요한 경우 Instance와 Interceptor를 통해 요청마다 다른 설정과 로직을 유연하게 정의할 수 있었습니다.'
-thumbnail: './overview.png'
+thumbnail: './overview-axios.png'
 ---
 
 ## 요약
