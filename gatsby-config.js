@@ -45,12 +45,6 @@ module.exports = {
             },
           },
           {
-            resolve: 'gatsby-remark-prismjs',
-            options: {
-              classPrefix: 'language-',
-            },
-          },
-          {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 768,
@@ -60,7 +54,6 @@ module.exports = {
           },
           {
             resolve: 'gatsby-remark-copy-linked-files',
-            options: {},
           },
           {
             resolve: 'gatsby-remark-external-links',
@@ -72,7 +65,13 @@ module.exports = {
           {
             resolve: `gatsby-remark-vscode`,
             options: {
-              theme: 'Dark (Visual Studio)', // Or install your favorite theme from GitHub
+              theme: {
+                default: 'Dark+ (default dark)',
+                parentSelector: {
+                  'body.dark': 'Dark+ (default dark)',
+                  'body.light': 'Light+ (default light)',
+                },
+              },
             },
           },
           {
