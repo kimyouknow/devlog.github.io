@@ -1,7 +1,7 @@
 ---
 date: '2023-03-15'
 title: 'API 요청 상태를 시각적으로 전달하기 : FE의 구현 경험'
-categories: ['WEB', '문제해결', 'UX/UI']
+categories: ['WEB', '문제해결', 'API', 'UX/UI']
 summary: 'FE에서 API 요청을 보낸 뒤 해야할 일이 무엇일까요? API 요청은 비동기적인 요청으로 순서가 보장되어 있지 않기 때문에 얼마나 기다려야하는지 알기 어렵습니다. 이 때, FE에서 응답을 기다리면서 사용자에게 적절한 경험을 보여주다가 응답이 돌아오면 다음 해야할 일을 해야한다고 생각합니다. 해당 기능을 구현하기 위해 React에서 custom hooks와 HOC를 활용해봤습니다.'
 thumbnail: './loading.webp'
 ---
