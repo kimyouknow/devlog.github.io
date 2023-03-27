@@ -1,5 +1,7 @@
 import { css } from '@emotion/react'
 
+import media from './media'
+
 const markdownStyle = css`
   // Markdown Style
   word-break: break-all;
@@ -165,8 +167,14 @@ const markdownStyle = css`
     margin-bottom: 0;
   }
 
+  // added for image resizing
+  img {
+    width: 100%;
+    max-width: 768px;
+  }
+
   // Markdown Responsive Design
-  @media (max-width: 768px) {
+  @media (${media.medium}) {
     width: 100%;
     padding: 80px 20px;
     line-height: 1.6;
@@ -191,14 +199,6 @@ const markdownStyle = css`
     hr {
       margin: 50px 0;
     }
-  }
-
-  // added for image resizing
-  img {
-    max-width: 100% !important;
-    width: auto !important;
-    height: auto !important;
-    position: relative !important;
   }
 `
 

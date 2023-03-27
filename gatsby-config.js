@@ -84,6 +84,7 @@ module.exports = {
             },
           },
           `gatsby-remark-reading-time`,
+          'gatsby-remark-gifs',
         ],
       },
     },
