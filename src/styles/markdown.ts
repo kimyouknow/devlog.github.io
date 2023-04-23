@@ -10,6 +10,7 @@ const markdownStyle = css`
   font-weight: 500;
   color: var(--color-text);
   background-color: var(--color-background);
+  margin: 2rem 0;
 
   // Apply Padding Attribute to All Elements
   p {
@@ -62,7 +63,7 @@ const markdownStyle = css`
   blockquote {
     margin: 12px 0;
     padding: 5px 15px;
-    border-left: 2px solid var(--color-text);
+    border-left: 5px solid var(--color-text);
     font-weight: 800;
   }
 
@@ -91,7 +92,8 @@ const markdownStyle = css`
   }
 
   // Adjust Code Style
-  pre[class*='language-'] {
+  pre[class*='language-'],
+  .grvsc-container {
     margin: 10px 0;
     padding: 15px;
     font-size: 15px;
@@ -103,7 +105,8 @@ const markdownStyle = css`
   }
 
   code[class*='language-text'],
-  pre[class*='language-text'] {
+  pre[class*='language-text'],
+  .grvsc-container {
     padding: 1.6px 4.8px;
     font-size: 14.4px;
     background-color: var(--color-code-background);
@@ -113,7 +116,8 @@ const markdownStyle = css`
   }
 
   code[class*='language-'],
-  pre[class*='language-'] {
+  pre[class*='language-'],
+  .grvsc-container {
     tab-size: 2;
   }
 
