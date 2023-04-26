@@ -22,7 +22,7 @@ thumbnail: './thumbnail.png'
 
 **다양한 종류의 폼**
 
-프로젝트에는 다양한 종류의 폼(form)이 사용됩니다.
+최근 프로젝트를 예시로 들어보겠습니다. 해당 프로젝트를 진행하며 다양한 종류의 폼(form)를 다뤘습니다.
 
 > 로그인, 회원가입, 팀 모집 게시글 작성, 팀 모집 게시글 수정, 유저 프로필 수정, 유저 필수정보 입력, 댓글 및 대댓글 입력, 수정..
 
@@ -35,6 +35,8 @@ thumbnail: './thumbnail.png'
 > Text Input, Text Area, Image, Select-Option, Checkbox, 등등…
 
 ![다양한 종류의 입력](./input.png)
+
+어떻게 하면 다양한 종류의 입력 컴포넌트와 폼을 일관성 있게 관리할 수 있을까요?
 
 ### 2.1 요구사항 분석
 
@@ -72,7 +74,7 @@ thumbnail: './thumbnail.png'
 위에서 정리한 사항을 토대로 다음과 같은 요구사항을 설정해 봤습니다.
 
 - 다양한 폼에서 일관된 로직을 사용할 수 있게 만들기
-- 다양한 종류의 Input을 하나의 핸들러(onchange, onBlur)로 다루기
+- 다양한 종류의 입력 컴포넌트를 폼 단계에서 하나의 핸들러(onchange, onBlur)로 다루기
 - 로직과 UI를 분리하기
   - UI는 상태와 핸들러를 전달받기만 하기
   - 로직은 custom hooks로 관리하기
@@ -122,16 +124,19 @@ thumbnail: './thumbnail.png'
 
 ### 3.2 로직 분리하기
 
-Input 컴포넌트마다 상태를 직접 관리할 필요 없이 폼 계층에서 통합에서 관리해야 한다고 생각했습니다. 각각의 Input이 서로 영향을 줄 수 있도 있고, 버튼을 비활성화하는 로직처럼 다른 곳에서 Input들의 상태를 활용하기 때문입니다. 로직은 상태관리(useForm), 유효성 검증(service폴더), 제출하기(submitCallback)으로 구분해서 관리했습니다.
+입력 컴포넌트마다 상태를 직접 관리할 필요 없이 폼 계층에서 통합에서 관리해야 한다고 생각했습니다. 각각의 입력 컴포넌트들이 서로 영향을 줄 수 있도 있고, 버튼을 비활성화하는 로직처럼 다른 곳에서 입력 컴포넌트의 상태를 활용하기 때문입니다.
+
+따라서 로직을 React 컴포넌트가 아닌 hooks로 분리해야겠다는 생각이 들었습니다. 로직을 더 세분화하자면 로직은 상태관리(useForm), 유효성 검증(service폴더), 제출하기(submitCallback)으로 구분할 수 있습니다.
 
 **상태관리**
 
-폼 안에서 사용하는 Input 컴포넌트들의 입력값과 에러 메시지를 useState 객체로 관리했습니다. Input들의 상태를 객체로 관리하여 폼마다 원하는 Input들을 유연하게 관리할 수 있게 만들었습니다.
+폼 안에서 사용하는 입력 컴포넌트들의 입력값과 에러 메시지를 useState 객체로 관리했습니다. Input들의 상태를 객체로 관리하여 폼마다 원하는 Input들을 유연하게 관리할 수 있게 만들었습니다.
 
 또한, TextInput, SelectInput 등 다양한 Input 컴포넌트들의 상태 변경을 `onChangeHandler`라는 하나의 함수로 관리했습니다.
 
 ```tsx
 const useForm = <T extends Record<string, string>>({
+  initialValues,
   // 생략
 }: UseFormOptions<T>): UseFormReturns<T> => {
   const [inputValues, setInputValues] = useState<T>(initialValues)
@@ -177,7 +182,7 @@ const Component = () => {
 }
 ```
 
-유효성 검증이 필요한 Input 컴포넌트마다 로직을 props로 전달한다면 `스타일과 관련된 부분에 비즈니스와 관련된 로직이 섞여 있어 유지보수를 어렵게 할 수 있습니다.`
+유효성 검증이 필요한 입력 컴포넌트마다 로직을 props로 전달한다면 `스타일과 관련된 부분에 비즈니스와 관련된 로직이 섞여 있어 유지보수를 어렵게 할 수 있다는 생각이 들었습니다.`
 
 ```tsx
 <TextInput
@@ -190,7 +195,7 @@ const Component = () => {
 />
 ```
 
-각각의 Input 컴포넌트들은 서비스와 관련된 로직을 알 필요가 없습니다. `Input 컴포넌트들은 UI 컴포넌트라는 역할에 맞게 유효성 검증이라는 비즈니스로직이 아닌 에러 메시지라는 상태만 알고 있으면 됩니다.`
+각각의 Input 컴포넌트들은 서비스와 관련된 로직을 알 필요가 없습니다. `Input 컴포넌트들은 UI 컴포넌트라는 역할에 맞게 유효성 검증이라는 비즈니스 로직이 아닌 에러 메시지라는 상태만 알고 있으면 됩니다.`
 
 ```tsx
 <TextInput
@@ -232,19 +237,26 @@ export const loginValidate = ({ email, password }: LoginValidateProps): LoginVal
 
 **제출하기**
 
-어떤 폼은 제출이후 특정 페이지로 이동하게 할 수도 있고, 어떤 폼은 제출 전에 이미지를 이미지 서버에 올려야 하는 경우가 있었습니다. 이처럼 폼마다 제출 이후 로직이 다른 경우가 많아 제출함수를 외부에서 주입 받을 수 있게 만들었습니다.
+어떤 폼은 제출 이후 특정 페이지로 이동하게 할 수도 있고, 어떤 폼은 제출 전에 이미지를 이미지 서버에 올려야 하는 경우가 있었습니다. 이처럼 폼마다 제출 이후 로직이 다른 경우가 많아 제출함수를 외부에서 주입 받을 수 있게 만들었습니다.
 
 ```tsx
-const submitHandler = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
-  event && event.preventDefault()
+const useForm = <T extends Record<string, string>>({
+  submitCallback,
+}: // 생략
+UseFormOptions<T>): UseFormReturns<T> => {
+  // 생략
+  const submitHandler = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
+    event && event.preventDefault()
 
-  if (!satisfyAllValidates) {
-    showEntireError()
-    return
+    if (!satisfyAllValidates) {
+      showEntireError()
+      return
+    }
+    await submitCallback(inputValues)
+    resetInputValues()
+    resetValidateErrors()
   }
-  await submitCallback(inputValues)
-  resetInputValues()
-  resetValidateErrors()
+  // 생략
 }
 ```
 
@@ -287,7 +299,7 @@ const { inputValues, validateError, onChangeHandler, submitHandler, satisfyAllVa
 
 ## 4. 아쉬운 점
 
-useForm은 활용도가 꽤 높았습니다. 앞서 정리한 요구사항 뿐을 토대로 다양한 형태의 폼에 유연하게 적용할 수 있었습니다. 또한, 입력컴포넌트가 여러 페이지에서 분산된 다중 폼에서 사용해야 하는 경우 React의 Context API와 조합하여 구현할 수 있었습니다.
+useForm은 활용도가 꽤 높았습니다. 앞서 정리한 요구사항 뿐만 아니라 이를 토대로 다양한 형태의 폼에 유연하게 적용할 수 있었습니다. 또한, 입력컴포넌트가 여러 페이지에서 분산된 다중 폼에서 사용해야 하는 경우 React의 Context API와 조합하여 구현할 수 있었습니다.
 
 하지만 아쉬운 점도 있었습니다.
 
