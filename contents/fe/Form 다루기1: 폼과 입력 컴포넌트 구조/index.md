@@ -102,14 +102,14 @@ thumbnail: './thumbnail.png'
   placeHolder="직업"
   options={jobOptions}
   value={inputValues.job}
-  onChange={onChangeHandler}
+  onChange={onChange}
 />
 <TechStackSelectInput
   id="techSkills"
   placeholder="기술"
   label="기술"
   value={inputValues.techSkills}
-  onChange={onChangeHandler}
+  onChange={onChange}
   helperText={validateError.techSkills}
 />
 <TextInput
@@ -117,7 +117,7 @@ thumbnail: './thumbnail.png'
   label="슬로건"
   placeholder="슬로건"
   value={inputValues.slogan}
-  onChange={onChangeHandler}
+  onChange={onChange}
   helperText={validateError.slogan}
 />
 ```
@@ -137,8 +137,8 @@ thumbnail: './thumbnail.png'
 ```tsx
 const useForm = <T extends Record<string, string>>({
   initialValues,
-  // 생략
-}: UseFormOptions<T>): UseFormReturns<T> => {
+}: // 생략
+UseFormOptions<T>): UseFormReturns<T> => {
   const [inputValues, setInputValues] = useState<T>(initialValues)
   const [validateError, setValidateError] = useState<Record<keyof T, string>>({} as Record<keyof T, string>)
 
@@ -151,17 +151,16 @@ const useForm = <T extends Record<string, string>>({
     }
   }
 
-  const onBlurHandler = (id: keyof T, value: string)): void => {
+  const onBlur: ChangeHandler = event => {
     const { id, value } = event.target
+    setInputValues({ ...inputValues, [id]: value })
     onChangeError(id, value)
   }
 
-  const onChangeHandler = (id: keyof T, value: string): void => {
-    if (mode === FORM_MODE.onBlur) {
-      onBlurHandler(id, value)
-      return
-    }
+  const onChange: ChangeHandler = event => {
+    const { id, value } = event.target
     setInputValues({ ...inputValues, [id]: value })
+    if (mode === FORM_MODE.onBlur) return
     onChangeError(id, value)
   }
   // 생략
@@ -280,7 +279,7 @@ const submitCallback = async submitData => {
   // 생략
 }
 
-const { inputValues, validateError, onChangeHandler, submitHandler, satisfyAllValidates } = useForm({
+const { inputValues, validateError, onChange, submitHandler, satisfyAllValidates } = useForm({
   initialValues: {
     nickname,
     profileImage,
