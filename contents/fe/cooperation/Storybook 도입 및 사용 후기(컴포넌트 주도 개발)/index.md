@@ -1,7 +1,7 @@
 ---
 date: '2023-01-23'
 title: 'Storybook 도입 및 사용 후기(컴포넌트 주도 개발)'
-categories: ['문제해결', 'storybook', '협업']
+categories: ['문제해결', 'storybook', '협업', 'React']
 summary: '프로젝트를 진행하며 스토리북을 활용한 컴포넌트 주도 개발에 대해 고민해보고, 프론트 개발자로서 디자이너와 협업하는 과정에 대해 고민해봤습니다.'
 thumbnail: './component-driven.png'
 ---

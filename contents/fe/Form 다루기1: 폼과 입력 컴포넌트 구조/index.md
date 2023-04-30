@@ -1,7 +1,7 @@
 ---
 date: '2023-04-23'
 title: 'Form 다루기1: 폼과 입력 컴포넌트 구조'
-categories: ['WEB', 'Form', 'DX']
+categories: ['WEB', 'Form', 'DX', 'React']
 summary: '다양한 Form과 Input을 다루면서 어떻게 하면 디자인 시스템을 활용하고 반복되는 로직을 줄일 수 있을까 고민해 봤습니다.'
 thumbnail: './thumbnail.png'
 ---
