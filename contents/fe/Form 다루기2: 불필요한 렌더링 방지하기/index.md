@@ -12,6 +12,8 @@ thumbnail: './thumbnail.png'
 
 ## 1. 지난 글 요약
 
+[Custom useForm 데모 페이지 코드](https://github.com/kimyouknow/form-opt/blob/main/src/form/CustomForm/index.tsx)
+
 지난 글에서 제시한 **폼과 입력 컴포넌트를 관리하는 구조**는 아래와 같습니다.
 
 **상태관리(useForm)**
@@ -66,6 +68,8 @@ Slow Form은 React에서 일반적으로 볼 수 있는 부모 컴포넌트에�
 
 **Fast Form**
 
+[Fast Form 데모 페이지 코드](https://github.com/kimyouknow/form-opt/blob/main/src/form/FastForm/index.tsx)
+
 Fast Form은 Colocation을 적용한 접근 방법입니다.
 
 `Colocation`은 “**코드를 연관된 곳에 가능한 가까이 두어라(Place code as close to where it's relevant as possible)**“라는 개념입니다.
@@ -102,6 +106,8 @@ const Child = ({ ref }) => {
 그 외에 부모 컴포넌트에서 자식 컴포넌트에 직접 접근하도록 하여 `컴포넌트의 캡슐화를 약하게 하고`, 추가적인 API 코드를 작성하는 과정에서 `복잡성이 증가`하는 등 코드 유지 보수에 단점으로 적용될 만한 요소가 존재한다고 느꼈습니다.
 
 ### 3-3. 돌고 돌아 React Hook Form
+
+[React Hook Form 데모 페이지 코드](https://github.com/kimyouknow/form-opt/blob/main/src/form/RHF/index.tsx)
 
 마지막 방법은 React Hook Form(이하 RHF)을 활용한 방법입니다. RHF는 “사용하기 쉬운 유효성 검사와 함께 성능이 뛰어나고 유연하며 확장 가능한 기능”(출처: [공식문서](https://react-hook-form.com))을 제공하는 라이브러리입니다.
 
