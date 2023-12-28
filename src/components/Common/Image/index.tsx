@@ -3,7 +3,7 @@ import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image'
 
 import useStaticImage from '@/hooks/useStaticImage'
 
-const ImageSizeMap = {
+export const ImageSizeMap = {
   s: 'var(--icon-medium)',
   m: 'var(--icon-large)',
   l: 'var(--icon-xLarge)',

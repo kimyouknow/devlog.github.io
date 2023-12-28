@@ -1,7 +1,8 @@
+import { StaticImage } from 'gatsby-plugin-image'
 import { FaGithub } from 'react-icons/fa'
 import { HiOutlineMail } from 'react-icons/hi'
 
-import Image from '@/components/Common/Image'
+import { ImageSizeMap } from '@/components/Common/Image'
 import useBlogConfig from '@/hooks/useBlogConfig'
 import { copyToClipBoard } from '@/utils'
 
@@ -14,7 +15,18 @@ const Bio = () => {
   }
   return (
     <S.Container>
-      <Image src="profile-image.png" isCircle size="l" />
+      {/* FIXME(@kimyouknow): Image 컴포넌트에서 src 넘겼을 때 gatsby query에서 찾아서 undefined처리되는 버그 해결하기  */}
+      <StaticImage
+        src="https://github.com/kimyouknow.png"
+        alt="profile-image"
+        style={{
+          width: ImageSizeMap.l,
+          height: ImageSizeMap.l,
+          borderRadius: '50%',
+          zIndex: 0,
+          minWidth: ImageSizeMap.l,
+        }}
+      />
       <S.Info>
         <S.Author>{author}</S.Author>
         <S.Desc>{description}</S.Desc>
