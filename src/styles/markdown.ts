@@ -5,9 +5,9 @@ import media from './media'
 const markdownStyle = css`
   // Markdown Style
   word-break: break-all;
-  line-height: 1.5;
+  line-height: 1.8;
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--color-text);
   background-color: var(--color-background);
   margin: 2rem 0;
